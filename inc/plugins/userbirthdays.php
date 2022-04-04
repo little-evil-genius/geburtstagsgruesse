@@ -212,7 +212,7 @@ function userbirthdays_global() {
   } else {
       
     // AKTUELLES DATUM - TT.M  
-    $datenow = date("d.n", time());
+    $datenow = date("d-n", time());
 
     $birthday_query = $db->query(" SELECT * FROM ".TABLE_PREFIX."users u    
     LEFT JOIN ".TABLE_PREFIX."userfields uf    
@@ -275,7 +275,7 @@ function userbirthdays_global() {
     } else {
       
       // AKTUELLES DATUM - TT.M  
-      $datenow = date("d.n", time());
+      $datenow = date("d-n", time());
 
       // GEBURSTAGE ZÄHLEN
       $countbirthdays = $db->fetch_field($db->query("SELECT COUNT(*) AS geburstage FROM ".TABLE_PREFIX."users u
