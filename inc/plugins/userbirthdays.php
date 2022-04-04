@@ -11,7 +11,6 @@ function userbirthdays_info(){
   return array(
     "name"		=> "User Geburtstage",
 		"description"	=> "Durch dieses Plugin bekommen User eine persönliche Geburtstagsnachricht auf dem Index.",
-	        "website"	=> "https://github.com/little-evil-genius/user-geburtstagsgruesse",
 		"author"	=> "little.evil.genius",
 		"authorsite"	=> "https://storming-gates.de/member.php?action=profile&uid=1712",
 		"version"	=> "1.0",
@@ -267,6 +266,7 @@ function userbirthdays_global() {
 
         }
 
+        $birthday_user = substr($birthday_user, 0, -2);
         $team_userbirthdays = "<div class=\"red_alert\">Heute haben <b>".$countbirthdays."</b> User Geburtstag! Und zwar: ".$birthday_user."</div>";
 
       } else {
@@ -303,6 +303,7 @@ function userbirthdays_global() {
 
         }
 
+        $birthday_user = substr($birthday_user, 0, -2);
         $team_userbirthdays = "<div class=\"red_alert\">Heute haben <b>".$countbirthdays."</b> User Geburtstag! Und zwar: ".$birthday_user."</div>";
 
       } else {
