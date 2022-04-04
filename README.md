@@ -14,4 +14,8 @@
 - Teambenachrichtigung
 
 # Demo 
-<img src="https://cdn.discordapp.com/attachments/530810179181346816/960555857375023104/birthday.png" />
+Geburtstags-Gruß
+<img src="https://www.bilder-hochladen.net/files/m4bn-d5-af87.png" />
+
+Team Benachrichtigung
+<img src="https://www.bilder-hochladen.net/files/m4bn-d4-b762.png" />
