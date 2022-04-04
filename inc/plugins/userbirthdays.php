@@ -9,7 +9,7 @@ if(!defined("IN_MYBB"))
 function userbirthdays_info(){
 
   return array(
-                "name"		=> "User Geburtstage",
+    "name"		=> "User Geburtstage",
 		"description"	=> "Durch dieses Plugin bekommen User eine persönliche Geburtstagsnachricht auf dem Index.",
 		"author"	=> "little.evil.genius",
 		"authorsite"	=> "https://storming-gates.de/member.php?action=profile&uid=1712",
@@ -267,8 +267,11 @@ function userbirthdays_global() {
         }
 
         $birthday_user = substr($birthday_user, 0, -2);
-        $team_userbirthdays = "<div class=\"red_alert\">Heute haben <b>".$countbirthdays."</b> User Geburtstag! Und zwar: ".$birthday_user."</div>";
-
+        
+        if ($mybb->usergroup['canmodcp'] == "1") {
+          $team_userbirthdays = "<div class=\"red_alert\">Heute haben <b>".$countbirthdays."</b> User Geburtstag! Und zwar: ".$birthday_user."</div>";
+        }
+        
       } else {
         $team_userbirthdays = "";
       }
@@ -304,8 +307,11 @@ function userbirthdays_global() {
         }
 
         $birthday_user = substr($birthday_user, 0, -2);
-        $team_userbirthdays = "<div class=\"red_alert\">Heute haben <b>".$countbirthdays."</b> User Geburtstag! Und zwar: ".$birthday_user."</div>";
 
+        if ($mybb->usergroup['canmodcp'] == "1") {
+          $team_userbirthdays = "<div class=\"red_alert\">Heute haben <b>".$countbirthdays."</b> User Geburtstag! Und zwar: ".$birthday_user."</div>";
+        }
+        
       } else {
         $team_userbirthdays = "";
       }
