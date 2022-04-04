@@ -9,7 +9,7 @@ if(!defined("IN_MYBB"))
 function userbirthdays_info(){
 
   return array(
-    "name"		=> "User Geburtstage",
+                "name"		=> "User Geburtstage",
 		"description"	=> "Durch dieses Plugin bekommen User eine persönliche Geburtstagsnachricht auf dem Index.",
 		"author"	=> "little.evil.genius",
 		"authorsite"	=> "https://storming-gates.de/member.php?action=profile&uid=1712",
