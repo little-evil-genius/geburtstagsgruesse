@@ -1,4 +1,5 @@
 # User Geburtstagsgrüße
+Mit diesem kleinen Plugin erhalten User an ihrem Geburtstag einen Geburtstagsgruß im Forum. Auch Wunsch bekommt das Team eine Meldung, ob an diesem Tag ein User Geburtstag hat. Die User Geburtstage können über Profilfeld oder über das MyBB Geburtstagsfeld.
 
 # Neue Templates
 - index_userbirthdays
