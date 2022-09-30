@@ -13,7 +13,7 @@ function userbirthdays_info(){
 		"description"	=> "Durch dieses Plugin bekommen User eine persönliche Geburtstagsnachricht auf dem Index.",
 		"author"	=> "little.evil.genius",
 		"authorsite"	=> "https://storming-gates.de/member.php?action=profile&uid=1712",
-		"version"	=> "1.0",
+		"version"	=> "1.1",
 		"compatibility" => "18*"
 	);
 
@@ -69,9 +69,9 @@ function userbirthdays_install() {
       'description' => 'Der Standardtext, welcher angezeigt werden soll bei einem Geburtstag. Zeilenumbrüche müssen mit <"br"> (ohne ") erfolgen',
       'optionscode' => 'textarea',
       'value' => 'Wir wünschen dir so viel Glück, wie der Regen Tropfen, so viel Liebe, wie die Sonne Strahlen und so viel Freude, wie der Himmel Sterne hat.<br>
-                Wir wünschen dir einen wundervollen Tag, viel Freude, Gesundheit und Zufriedenheit für das nächste Jahr und viel Glück für alles, was du dir vornimmst.<br>
-                Die schönsten Tage des letzten Jahres mögen die Schlechtesten des kommen sein. Lass dich feiern, genieß den Tag und bleib so, wie du bist!<br>
-                Herzlichen Glückwunsch zum Geburtstag!', // Default        
+      Wir wünschen dir einen wundervollen Tag, viel Freude, Gesundheit und Zufriedenheit für das nächste Jahr und viel Glück für alles, was du dir vornimmst.<br>
+      Die schönsten Tage des letzten Jahres mögen die schlechtesten des kommenden Jahres sein. Lass dich feiern, genieß den Tag und bleib so, wie du bist!<br>
+      Herzlichen Glückwunsch zum Geburtstag!', // Default        
      'disporder' => 4
     ),
 
@@ -187,8 +187,9 @@ function userbirthdays_global() {
   $charas = userbirthdays_get_allchars($user_id);
   $charastring = implode(",", array_keys($charas));
   
-
+  
   // USER ANZEIGE
+  // Profilfeld
   if ($field_setting == 0) {
     
     // AKTUELLES DATUM - TT.MM  
@@ -197,7 +198,7 @@ function userbirthdays_global() {
     $birthday_query = $db->query(" SELECT * FROM ".TABLE_PREFIX."users u    
     LEFT JOIN ".TABLE_PREFIX."userfields uf    
     ON (u.uid = uf.ufid) 
-    WHERE $birthdayfid LIKE '$datenow%'
+    WHERE $birthdayfid LIKE '$datenow.%'
     AND uid IN ({$charastring})
     ");
       
@@ -206,7 +207,10 @@ function userbirthdays_global() {
       $userid = $user['uid'];     
       $spieler = $user[$playerfid];
 
-      eval("\$index_userbirthdays = \"".$templates->get ("index_userbirthdays")."\";");
+      if ($user_id != 0) {
+        eval("\$index_userbirthdays = \"".$templates->get ("index_userbirthdays")."\";");
+      }
+
     }
 
   } else {
@@ -217,7 +221,7 @@ function userbirthdays_global() {
     $birthday_query = $db->query(" SELECT * FROM ".TABLE_PREFIX."users u    
     LEFT JOIN ".TABLE_PREFIX."userfields uf    
     ON (u.uid = uf.ufid) 
-    WHERE birthday LIKE '$datenow%'
+    WHERE birthday LIKE '$datenow-%'
     AND uid IN ({$charastring})
     ");
       
@@ -226,7 +230,9 @@ function userbirthdays_global() {
       $userid = $user['uid'];     
       $spieler = $user[$playerfid];
 
-      eval("\$index_userbirthdays = \"".$templates->get ("index_userbirthdays")."\";");
+      if ($user_id != 0) {
+        eval("\$index_userbirthdays = \"".$templates->get ("index_userbirthdays")."\";");
+      }
     }
 
   }
@@ -243,7 +249,7 @@ function userbirthdays_global() {
 
       // GEBURSTAGE ZÄHLEN
       $countbirthdays = $db->fetch_field($db->query("SELECT COUNT(*) AS geburstage FROM ".TABLE_PREFIX."userfields uf
-      WHERE $birthdayfid LIKE '$datenow%'
+      WHERE $birthdayfid LIKE '$datenow.%'
       "), 'geburstage');
 
       if ($countbirthdays > 0) {
@@ -251,7 +257,7 @@ function userbirthdays_global() {
         $birthdayuser_query = $db->query(" SELECT * FROM ".TABLE_PREFIX."users u    
         LEFT JOIN ".TABLE_PREFIX."userfields uf    
         ON (u.uid = uf.ufid) 
-        WHERE $birthdayfid LIKE '$datenow%'
+        WHERE $birthdayfid LIKE '$datenow.%'
         AND as_uid = '0'
         ");
    
@@ -283,7 +289,7 @@ function userbirthdays_global() {
 
       // GEBURSTAGE ZÄHLEN
       $countbirthdays = $db->fetch_field($db->query("SELECT COUNT(*) AS geburstage FROM ".TABLE_PREFIX."users u
-      WHERE birthday LIKE '$datenow%'
+      WHERE birthday LIKE '$datenow-%'
       "), 'geburstage');
 
       if ($countbirthdays > 0) {
@@ -291,7 +297,7 @@ function userbirthdays_global() {
         $birthdayuser_query = $db->query(" SELECT * FROM ".TABLE_PREFIX."users u    
         LEFT JOIN ".TABLE_PREFIX."userfields uf    
         ON (u.uid = uf.ufid) 
-        WHERE birthday LIKE '$datenow%'
+        WHERE birthday LIKE '$datenow-%'
         AND as_uid = '0'
         ");
    
