@@ -134,7 +134,6 @@ function userbirthdays_is_installed() {
 	return false;
 }
 
-// Diese Funktion wird aufgerufen, wenn das Plugin deinstalliert wird (optional).
 function userbirthdays_uninstall() {
 
 	global $db;
@@ -175,6 +174,26 @@ function userbirthdays_deactivate() {
 ##############################
 ### FUNKTIONEN - THE MAGIC ###
 ##############################
+
+/// ADMIN-CP PEEKER
+$plugins->add_hook('admin_config_settings_change', 'userbirthdays_settings_change');
+$plugins->add_hook('admin_settings_print_peekers', 'userbirthdays_settings_peek');
+function userbirthdays_settings_change(){
+    
+  global $db, $mybb, $userbirthdays_settings_peeker;
+
+  $result = $db->simple_select('settinggroups', 'gid', "name='userbirthdays'", array("limit" => 1));
+  $group = $db->fetch_array($result);
+  $userbirthdays_settings_peeker = ($mybb->input['gid'] == $group['gid']) && ($mybb->request_method != 'post');
+}
+
+function userbirthdays_settings_peek(&$peekers){
+  global $mybb, $userbirthdays_settings_peeker;
+
+if ($userbirthdays_settings_peeker) {
+     $peekers[] = 'new Peeker($("#setting_userbirthdays_field"), $("#row_setting_userbirthdays_birthday"), /^(0|1)/, false)';
+  }
+}
 
 // ADMIN BEREICH //
 // action handler fürs acp konfigurieren
