@@ -16,7 +16,10 @@ Mit diesem kleinen Plugin erhalten User an ihrem Geburtstag einen Geburtstagsgru
 
 # Demo 
 Geburtstags-Gruß
-<img src="https://www.bilder-hochladen.net/files/m4bn-d5-af87.png" />
+<img src="https://stormborn.at/plugins/birthday_index.png" />
 
 Team Benachrichtigung
-<img src="https://www.bilder-hochladen.net/files/m4bn-d4-b762.png" />
+<img src="https://stormborn.at/plugins/birthday_team.png" />
+
+Geburtstagsliste im ACP
+<img src="https://stormborn.at/plugins/birthday_acp.png" />
