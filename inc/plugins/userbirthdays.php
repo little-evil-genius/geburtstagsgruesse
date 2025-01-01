@@ -20,7 +20,7 @@ function userbirthdays_info() {
 		"description" => "Durch dieses Plugin bekommen User eine persönliche Geburtstagsnachricht auf dem Index.",
 		"author" => "little.evil.genius",
 		"authorsite" => "https://storming-gates.de/member.php?action=profile&uid=1712",
-		"version" => "2.0",
+		"version" => "2.0.1",
 		"compatibility" => "18*"
 	);
 
@@ -184,7 +184,7 @@ function userbirthdays_settings_change(){
 
   $result = $db->simple_select('settinggroups', 'gid', "name='userbirthdays'", array("limit" => 1));
   $group = $db->fetch_array($result);
-  $userbirthdays_settings_peeker = ($mybb->input['gid'] == $group['gid']) && ($mybb->request_method != 'post');
+  $userbirthdays_settings_peeker = ($mybb->get_input('gid') == $group['gid']) && ($mybb->request_method != 'post');
 }
 
 function userbirthdays_settings_peek(&$peekers){
