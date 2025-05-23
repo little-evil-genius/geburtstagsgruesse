@@ -1,5 +1,9 @@
 # User Geburtstagsgrüße
-Mit diesem kleinen Plugin erhalten User an ihrem Geburtstag einen Geburtstagsgruß im Forum. Auch Wunsch bekommt das Team eine Meldung, ob an diesem Tag ein User Geburtstag hat. Die User Geburtstage können über Profilfeld oder über das MyBB Geburtstagsfeld.
+Mit diesem kleinen Plugin erhalten User:innen an ihrem Geburtstag automatisch einen Geburtstagsgruß im Forum. Optional kann auch das Team benachrichtigt werden, wenn ein Mitglied Geburtstag hat.<br>
+<br>
+Die Geburtstage können flexibel über ein Profilfeld, ein Steckbrieffeld (aus dem Plugin <a href="https://github.com/katjalennartz/application_ucp" target="_blank">Steckbriefe im UCP</a> von risuena) oder das MyBB-eigene Geburtstagsfeld erfasst werden. Bei Profil- und Steckbrieffeldern (vom Typ Text) muss das Datum im Format TT.MM.YYYY eingetragen werden – das Jahr ist optional, allerdings muss der Punkt nach dem Monat vorhanden sein (z.B. 23.05.).<br>
+<br>
+Zusätzlich bietet das Plugin eine übersichtliche Liste aller eingetragenen Geburtstage. So behalten Team und Community jederzeit den Überblick.
 
 # Vorrausetzung
 - Das ACP Modul <a href="https://github.com/little-evil-genius/rpgstuff_modul" target="_blank">RPG Stuff</a> <b>muss</b> vorhanden sein.
@@ -33,6 +37,9 @@ Das Plugin ist kompatibel mit den klassischen Profilfeldern von MyBB und/oder de
 
 # Neue Variablen
 - header: {$index_userbirthdays}{$team_userbirthdays}
+
+# Links
+FORENLINK/misc.php?action=userbirthdays
 
 # Demo 
 Geburtstags-Gruß
