@@ -751,7 +751,7 @@ function userbirthdays_settings($type = 'install') {
 
     $setting_array = array(
 		'userbirthdays_field' => array(
-			'title' => 'Geburtstagsfeld',
+			'title' => 'Geburtstagsoption',
             'description' => 'Mit welcher Option werden die Geburtstage der User:innen erfasst?',
             'optionscode' => 'select\n0=Profilfeld\n1=Steckbrief-Plugin von Risuena\n2=MyBB-Geburtstagsfeld',
             'value' => '2', // Default
