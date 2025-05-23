@@ -1,7 +1,7 @@
 <?php
 $l['userbirthdays_index_headline'] = "Herzlichen Glückwunsch zum Geburtstag, {1}!";
 $l['userbirthdays_banner_team_single'] = "Heute hat {1} Geburtstag!";
-$l['userbirthdays_banner_team_plural'] = ">Heute haben <b>{1}</b> User:innen Geburtstag! Und zwar: {2}";
+$l['userbirthdays_banner_team_plural'] = "Heute haben <b>{1}</b> User:innen Geburtstag! Und zwar: {2}";
 
 $l['userbirthdays_lists'] = "Listen";
 $l['userbirthdays_list'] = "Geburtstage der User:innen";
