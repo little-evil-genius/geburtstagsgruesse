@@ -300,6 +300,8 @@ function userbirthdays_global() {
 
     global $db, $mybb, $lang, $templates, $index_userbirthdays, $team_userbirthdays, $birthday_text, $bannerText, $headlineText;
 
+    if ($mybb->user['uid'] == 0) return;
+
     // SPRACHDATEI
     $lang->load('userbirthdays');
 
@@ -579,8 +581,8 @@ function userbirthdays_birthdaylist($number) {
 
         // YYYY-MM-TT
         if ($fieldtyp == "date") {
-            $birthday_query = $db->query("SELECT af.*, u.username, u.as_uid FROM ".TABLE_PREFIX."application_ucp_fields af
-            JOIN ".TABLE_PREFIX."users u ON u.uid = af.ufid
+            $birthday_query = $db->query("SELECT af.*, u.username, u.as_uid FROM ".TABLE_PREFIX."application_ucp_userfields af
+            JOIN ".TABLE_PREFIX."users u ON u.uid = af.uid
             WHERE value LIKE '%-".$month."-%' 
             AND fieldid = ".$fieldid."
             AND as_uid = 0
@@ -589,7 +591,8 @@ function userbirthdays_birthdaylist($number) {
         } 
         // TT.MM.YYYY
         else {
-            $birthday_query = $db->query("SELECT af.*, u.username, u.as_uid FROM ".TABLE_PREFIX."application_ucp_fields af
+            $birthday_query = $db->query("SELECT af.*, u.username, u.as_uid FROM ".TABLE_PREFIX."application_ucp_userfields af
+            JOIN ".TABLE_PREFIX."users u ON u.uid = af.uid
             WHERE value LIKE '%.".$month.".%' 
             AND fieldid = ".$fieldid."
             AND as_uid = 0
@@ -686,14 +689,14 @@ function userbirthdays_birthdayIndex($uid = '') {
 
         // YYYY-MM-TT
         if ($fieldtyp == "date") {
-            $birthday_query = $db->query("SELECT * FROM ".TABLE_PREFIX."application_ucp_fields af
+            $birthday_query = $db->query("SELECT * FROM ".TABLE_PREFIX."application_ucp_userfields uf
             WHERE value LIKE '%-".$month."-".$day."' 
             AND fieldid = ".$fieldid." 
             ".$userSQL);
         } 
         // TT.MM.YYYY
         else {
-            $birthday_query = $db->query("SELECT * FROM ".TABLE_PREFIX."application_ucp_fields af
+            $birthday_query = $db->query("SELECT * FROM ".TABLE_PREFIX."application_ucp_userfields uf
             WHERE value LIKE '".$day.".".$month.".%' 
             AND fieldid = ".$fieldid." 
             ".$userSQL);
