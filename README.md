@@ -42,11 +42,11 @@ Das Plugin ist kompatibel mit den klassischen Profilfeldern von MyBB und/oder de
 FORENLINK/misc.php?action=userbirthdays
 
 # Demo 
-Geburtstags-Gruß
+### Geburtstags-Gruß
 <img src="https://stormborn.at/plugins/birthday_index.png" />
 
-Team Benachrichtigung
+### Team Benachrichtigung
 <img src="https://stormborn.at/plugins/birthday_team.png" />
 
-Geburtstagsliste
+### Geburtstagsliste
 <img src="https://stormborn.at/plugins/birthday_list.png" />
