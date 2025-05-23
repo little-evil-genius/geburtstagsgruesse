@@ -22,7 +22,7 @@ $plugins->add_hook("build_friendly_wol_location_end", "userbirthdays_online_loca
 // Die Informationen, die im Pluginmanager angezeigt werden
 function userbirthdays_info() {
 	return array(
-		"name"		=> "Geburtstage der User:innen",
+		"name"		=> "Geburtstagsgrüße",
 		"description"	=> "Durch dieses Plugin bekommen User:innen eine persönliche Geburtstagsnachricht auf dem Index angezeigt. Zusätzlich kann eine Liste ausgeben werden im Forum mit allen Geburtstagen.",
 		"website"	=> "https://github.com/little-evil-genius/user-geburtstagsgruesse",
 		"author"	=> "little.evil.genius",
@@ -53,8 +53,8 @@ function userbirthdays_install() {
     $maxdisporder = $db->fetch_field($db->query("SELECT MAX(disporder) FROM ".TABLE_PREFIX."settinggroups"), "MAX(disporder)");
     $setting_group = array(
         'name'          => 'userbirthdays',
-        'title'         => 'Geburtstage der User:innen',
-        'description'   => 'Einstellungen für das Plugin "Geburtstage der User:innen"',
+        'title'         => 'Geburtstagsgrüße',
+        'description'   => 'Einstellungen für das Plugin "Geburtstagsgrüße"',
         'disporder'     => $maxdisporder+1,
         'isdefault'     => 0
     );
@@ -68,7 +68,7 @@ function userbirthdays_install() {
 	// Template Gruppe für jedes Design erstellen
     $templategroup = array(
         "prefix" => "userbirthdays",
-        "title" => $db->escape_string("Geburtstage der User:innen"),
+        "title" => $db->escape_string("Geburtstagsgrüße"),
     );
     $db->insert_query("templategroups", $templategroup);
     // Templates 
@@ -193,7 +193,7 @@ function userbirthdays_admin_update_stylesheet(&$table) {
     }
 
     // Zelle mit dem Namen des Themes
-    $table->construct_cell("<b>".htmlspecialchars_uni("Geburtstage der User:innen")."</b>", array('width' => '70%'));
+    $table->construct_cell("<b>".htmlspecialchars_uni("Geburtstagsgrüße")."</b>", array('width' => '70%'));
 
     // Ob im Master Style vorhanden
     $master_check = $db->fetch_field($db->query("SELECT tid FROM ".TABLE_PREFIX."themestylesheets 
@@ -281,7 +281,7 @@ function userbirthdays_admin_update_plugin(&$table) {
     }
 
     // Zelle mit dem Namen des Themes
-    $table->construct_cell("<b>".htmlspecialchars_uni("Geburtstage der User:innen")."</b>", array('width' => '70%'));
+    $table->construct_cell("<b>".htmlspecialchars_uni("Geburtstagsgrüße")."</b>", array('width' => '70%'));
 
     // Überprüfen, ob Update erledigt
     $update_check = userbirthdays_is_updated();
@@ -966,7 +966,7 @@ function userbirthdays_templates($mode = '') {
         if (!$existing) {
             $templategroup = array(
                 "prefix" => $prefix,
-                "title" => $db->escape_string("Geburtstage der User:innen"),
+                "title" => $db->escape_string("Geburtstagsgrüße"),
             );
             $db->insert_query("templategroups", $templategroup);
         }
