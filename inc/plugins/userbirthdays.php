@@ -24,7 +24,7 @@ function userbirthdays_info() {
 	return array(
 		"name"		=> "Geburtstagsgrüße",
 		"description"	=> "Durch dieses Plugin bekommen User:innen eine persönliche Geburtstagsnachricht auf dem Index angezeigt. Zusätzlich kann eine Liste ausgeben werden im Forum mit allen Geburtstagen.",
-		"website"	=> "https://github.com/little-evil-genius/user-geburtstagsgruesse",
+		"website"	=> "https://github.com/little-evil-genius/geburtstagsgruesse",
 		"author"	=> "little.evil.genius",
 		"authorsite"	=> "https://storming-gates.de/member.php?action=profile&uid=1712",
 		"version"	=> "2.1",
