@@ -1,4 +1,4 @@
-# User Geburtstagsgrüße
+# Geburtstagsgrüße
 Mit diesem kleinen Plugin erhalten User:innen an ihrem Geburtstag automatisch einen Geburtstagsgruß im Forum. Optional kann auch das Team benachrichtigt werden, wenn ein Mitglied Geburtstag hat.<br>
 <br>
 Die Geburtstage können flexibel über ein Profilfeld, ein Steckbrieffeld (aus dem Plugin <a href="https://github.com/katjalennartz/application_ucp" target="_blank">Steckbriefe im UCP</a> von risuena) oder das MyBB-eigene Geburtstagsfeld erfasst werden. Bei Profil- und Steckbrieffeldern (vom Typ Text) muss das Datum im Format TT.MM.YYYY eingetragen werden – das Jahr ist optional, allerdings muss der Punkt nach dem Monat vorhanden sein (z.B. 23.05.).<br>
