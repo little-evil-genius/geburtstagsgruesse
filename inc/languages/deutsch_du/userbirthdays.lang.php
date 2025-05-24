@@ -18,3 +18,5 @@ $l['userbirthdays_sep'] = "September";
 $l['userbirthdays_okt'] = "Oktober";
 $l['userbirthdays_nov'] = "November";
 $l['userbirthdays_dez'] = "Dezember";
+
+$l['userbirthdays_online_location'] = "Sieht sich die <a href=\"misc.php?action=userbirthdays\">Liste \"Geburtstage der User:innen\"</a> an.";
